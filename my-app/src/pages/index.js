@@ -92,6 +92,7 @@ export default function Home() {
       // Get the provider from web3Modal, which in our case is MetaMask
       // No need for the Signer here, as we are only reading state from the blockchain
       const provider = await getProviderOrSigner();
+      
       // Create an instance of token contract
       const tokenContract = new Contract(
         TOKEN_CONTRACT_ADDRESS,
@@ -119,14 +120,17 @@ export default function Home() {
     try {
       // We need a Signer here since this is a 'write' transaction.
       // Create an instance of tokenContract
+      
       const signer = await getProviderOrSigner(true);
-      // Create an instance of tokenContract
+      // Create an instance of tokenContract#
+      console.log('sidjo\hfuh\sfh\ierjhuie\ ')
       const tokenContract = new Contract(
         TOKEN_CONTRACT_ADDRESS,
         TOKEN_CONTRACT_ABI,
         signer
       );
-      // Each token is of `0.001 ether`. The value we need to send is `0.001 * amount`
+      console.log(tokenContract)
+      // // Each token is of `0.001 ether`. The value we need to send is `0.001 * amount`
       const value = 0.001 * amount;
       const tx = await tokenContract.mint(amount, {
         // value signifies the cost of one crypto dev token which is "0.001" eth.
@@ -267,8 +271,8 @@ export default function Home() {
     // If user is not connected to the Goerli network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 80001) {
-      window.alert("Change the network to Goerli");
-      throw new Error("Change network to Goerli");
+      window.alert("Change the network to Mumbai");
+      throw new Error("Change network to Mumbai");
     }
 
     if (needSigner) {
@@ -411,7 +415,7 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-        Made with &#10084; by Crypto Devs
+        Made with &#10084; by Dev ADeboss
       </footer>
     </div>
   );
