@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../Whitelist-Dapp"
+	},
+	{
+		"path": "../../../NFT-Collection"
+	}
+],
+  "settings": {}
+}
